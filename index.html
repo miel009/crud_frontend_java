@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CRUD de Artículos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="flex flex-col min-h-screen bg-pink-50 text-gray-800 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-pink-200 border-pink-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-pink-800 tracking-wide">MIMO Pastry</a>
+            <ul class="flex space-x-8">
+                <li><a href="#" class="text-pink-700 hover:text-pink-900 transition">Inicio</a></li>
+                <li><a href="#" class="text-pink-700 hover:text-pink-900 transition">Artículos</a></li>
+                <li><a href="#" class="text-pink-700 hover:text-pink-900 transition">Acerca</a></li>
+                <li><a href="#" class="text-pink-700 hover:text-pink-900 transition">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido -->
+    <main class="flex-1">
+        <div class="max-w-3xl mx-auto px-6 py-12">
+            <h1 class="text-3xl font-extrabold text-pink-900 text-center mb-10">Gestión de Artículos</h1>
+
+            <!-- Formulario -->
+            <form id="form-articulo" class="space-y-6 bg-white border border-pink-200 rounded-xl p-8 shadow-md">
+                <input type="hidden" id="idArticulo" />
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-pink-800 mb-2">Nombre del Artículo</label>
+                    <input type="text" id="nombre" required
+                        class="w-full border border-pink-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400 transition" />
+                </div>
+                <div>
+                    <label for="precio" class="block text-sm font-medium text-pink-800 mb-2">Precio</label>
+                    <input type="number" id="precio" step="0.01" required
+                        class="w-full border border-pink-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pink-400 transition" />
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button type="submit"
+                        class="bg-pink-600 text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-pink-700 transition">Guardar</button>
+                    <button type="button" id="cancelar"
+                        class="border border-pink-400 text-pink-700 px-6 py-3 rounded-lg text-sm font-semibold hover:bg-pink-100 transition">Cancelar</button>
+                </div>
+            </form>
+
+            <!-- Tabla -->
+
+        </div>
+        <div class="p-0 m-0 max-w-6xl mx-auto px-8 py-14">
+        <h2 class="text-2xl font-bold text-pink-900 mb-6">Lista de Artículos</h2>
+           <table class="w-full bg-white rounded-2xl shadow-lg text-base border-separate table-auto">
+
+
+                <thead class="bg-pink-200 text-pink-900 font-semibold">
+                    <tr>
+                        <th class="px-8 py-5 text-left rounded-tl-2xl">ID</th>
+                        <th class="px-8 py-5 text-left">Nombre</th>
+                        <th class="px-8 py-5 text-left">Precio</th>
+                        <th class="px-8 py-5 text-left rounded-tr-2xl">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-articulos" class="bg-pink-50">
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-pink-100 border-t pink-300 text-center text-sm text-pink-700 py-6 mt-12">
+        <p>&copy; 2025 MIMO Pastry. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
